@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct ProductUseCases {
+    let retrieve: RetrieveProductsProtocol
+    let local: LoadProductsFromLocalProtocol
+    let save: SaveProductsProtocol
+}

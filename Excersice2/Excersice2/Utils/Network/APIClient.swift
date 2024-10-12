@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import Combine
+
+protocol APIClient {
+    associatedtype EndpointType: APIEndpoint
+    func perform<T: Decodable, K: Decodable>(_ endpoint: EndpointType) -> AnyPublisher<Response<T>, APIError<K>>
+}

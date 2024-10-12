@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+protocol ProductsProtocols: ObservableObject {
+    var products: [ProductDTO] { get set }
+    var isFromDB: Bool { get set }
+    var titleAlert: String { get set }
+    var messageAlert: String { get set }
+}

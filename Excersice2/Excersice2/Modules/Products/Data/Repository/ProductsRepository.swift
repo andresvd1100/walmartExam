@@ -16,8 +16,16 @@ struct ProductsRepository: ProductRepositoryProtocol {
         self.dataManager = dataManager
     }
     
-    func retrieveProductList() -> AnyPublisher<ProductModel, any Error> {
+    func retrieveProductList() -> AnyPublisher<[ProductModel], any Error> {
         dataManager.retrieveProductList()
+    }
+    
+    func retrieveLocalProductList() -> AnyPublisher<[Product], any Error> {
+        dataManager.retrieveLocalProductList()
+    }
+    
+    func saveAllProducts(products: [ProductDTO]) -> AnyPublisher<Bool, any Error> {
+        dataManager.saveAllProducts(products: products)
     }
     
     

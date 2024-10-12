@@ -13,7 +13,19 @@ struct Excersice2App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            /*ProductView(
+                viewModel: ProductViewModel(
+                    products: [],
+                    productUseCase: RetrieveProductsUseCase(
+                        repository: ProductsRepository(
+                            dataManager: ProductDataManager(
+                                apiClient: ManagerAPIClient<ProductEndpoint>()
+                            )
+                        )
+                    )
+                )
+            )*/
+            ContentView(viewModel: ContentViewModel(repository: ProductsRepository(dataManager: ProductDataManager(apiClient: ManagerAPIClient<ProductEndpoint>()))))
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

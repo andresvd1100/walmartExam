@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum APIConstants: String {
+    case baseURL = "https://fakestoreapi.com"
+    
+}
